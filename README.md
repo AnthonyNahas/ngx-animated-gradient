@@ -101,6 +101,10 @@ another full example
 
 ```
 
+## Credit
+
+This library is an angular directive/version of [this](https://codepen.io/quasimondo/pen/lDdrF) codepen
+
 <a name="other-angular-libraries"/>
 
 ## Other Angular Libraries
