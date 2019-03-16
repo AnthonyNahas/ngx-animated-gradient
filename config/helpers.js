@@ -9,7 +9,7 @@ const _root = path.resolve(__dirname, '..');
  * Plaform independant path to an executable cmd
  * @param {string} path
  */
-platformPath = (path) => {
+const platformPath = (path) => {
   return /^win/.test(os.platform()) ? `${path}.cmd` : path;
 };
 
@@ -17,7 +17,7 @@ platformPath = (path) => {
  *
  * @param {string[]} args
  */
-rootDir = (...args) => {
+const rootDir = (...args) => {
   return path.join.apply(path, [_root].concat(...args));
 };
 
@@ -25,7 +25,7 @@ rootDir = (...args) => {
  *
  * @param {string} cmd
  */
-binPath = (cmd) => {
+const binPath = (cmd) => {
   return platformPath(`/node_modules/.bin/${cmd}`);
 };
 
@@ -36,7 +36,7 @@ binPath = (cmd) => {
  * @param opts See child_process.exec node docs
  * @returns {Promise<number>}
  */
-execp = (cmd, opts) => {
+const execp = (cmd, opts) => {
   opts = Object.assign(opts || {}, {
     stdout: process.stdout,
     stderr: process.stderr
@@ -59,9 +59,9 @@ execp = (cmd, opts) => {
  * @param opts See child_process.exec node docs
  * @returns {Promise<number>}
  */
-installDependencies = (opts) => {
-  return execp('yarn -v') // first try to install deps using yarn
-    .then(exitCode => exitCode === 0 ? execp('yarn install', opts) : execp('npm install', opts));
+const installDependencies = (opts) => {
+  return execp('npm -v') // first try to install deps using yarn
+    .then(exitCode => exitCode === 0 ? execp('npm install', opts) : execp('npm install', opts));
 };
 
 var exports = module.exports = {

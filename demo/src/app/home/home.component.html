@@ -30,7 +30,11 @@
       <div class="card-header">
         ngx-animated-gradient
       </div>
-      <div class="card-body" ngxAnimatedGradient style="height: 400px">
+      <div class="card-body" ngxAnimatedGradient style="height: 400px"></div>
+      <div class="card-body">
+        <button type="button" (click)="startGradient()">Start Gradient</button>
+        <button type="button" (click)="stopGradient()">Stop Gradient</button>
+        <button type="button" (click)="newPalette()">New Palette</button>
       </div>
       <div class="card-footer">
         <markdown src="assets/md/example.md"></markdown>
