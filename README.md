@@ -21,48 +21,48 @@ View all the directives in action at https://anthonynahas.github.io/ngx-animated
 ## Installation
 Install above dependencies via *npm*. 
 
-Now install `nx-animated-gradient` via:
+Now install `ngx-animated-gradient` via:
 ```shell
-npm install --save nx-animated-gradient
+npm install --save ngx-animated-gradient
 ```
 
 ---
 ##### SystemJS
 >**Note**:If you are using `SystemJS`, you should adjust your configuration to point to the UMD bundle.
-In your systemjs config file, `map` needs to tell the System loader where to look for `nx-animated-gradient`:
+In your systemjs config file, `map` needs to tell the System loader where to look for `ngx-animated-gradient`:
 ```js
 map: {
-  'nx-animated-gradient': 'node_modules/nx-animated-gradient/bundles/nx-animated-gradient.umd.js',
+  'ngx-animated-gradient': 'node_modules/ngx-animated-gradient/bundles/ngx-animated-gradient.umd.js',
 }
 ```
 ---
 
 Once installed you need to import the main module:
 ```js
-import { LibModule } from 'nx-animated-gradient';
+import { NgxAnimatedGradientModule } from 'ngx-animated-gradient';
 ```
 The only remaining part is to list the imported module in your application module. The exact method will be slightly
-different for the root (top-level) module for which you should end up with the code similar to (notice ` LibModule .forRoot()`):
+different for the root (top-level) module for which you should end up with the code similar to (notice ` NgxAnimatedGradientModule .forRoot()`):
 ```js
-import { LibModule } from 'nx-animated-gradient';
+import { NgxAnimatedGradientModule } from 'ngx-animated-gradient';
 
 @NgModule({
   declarations: [AppComponent, ...],
-  imports: [LibModule.forRoot(), ...],  
+  imports: [NgxAnimatedGradientModule.forRoot(), ...],  
   bootstrap: [AppComponent]
 })
 export class AppModule {
 }
 ```
 
-Other modules in your application can simply import ` LibModule `:
+Other modules in your application can simply import ` NgxAnimatedGradientModule `:
 
 ```js
-import { LibModule } from 'nx-animated-gradient';
+import { NgxAnimatedGradientModule } from 'ngx-animated-gradient';
 
 @NgModule({
   declarations: [OtherComponent, ...],
-  imports: [LibModule, ...], 
+  imports: [NgxAnimatedGradientModule, ...], 
 })
 export class OtherModule {
 }
