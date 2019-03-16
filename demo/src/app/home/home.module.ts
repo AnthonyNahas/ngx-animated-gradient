@@ -8,7 +8,7 @@ import { HomeComponent } from './home.component';
 @NgModule({
     imports: [
         CommonModule,
-        NgxAnimatedGradientModule.forRoot(),
+        NgxAnimatedGradientModule,
         HomeRoutingModule,
     ],
     declarations: [HomeComponent],
