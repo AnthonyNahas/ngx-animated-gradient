@@ -18,5 +18,8 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - npm install --quiet -g gulp-cli
 
+script: gulp build
+
+
 cache:
   yarn: true
