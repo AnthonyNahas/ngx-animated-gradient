@@ -5,13 +5,13 @@
 # ngx-animated-gradient - Angular Directivated that animated the gardient background
 
 [![npm version](https://badge.fury.io/js/ngx-animated-gradient.svg)](https://badge.fury.io/js/ngx-animated-gradient),
-[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://anthonynahas.github.io/ngx-linkifyjs)
+[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://anthonynahas.github.io/ngx-animated-gradient)
 [![Join the chat at (https://gitter.im/angular-material-extensions/Lobby](https://badges.gitter.im/ngx-auth-firebaseui/Lobby.svg)](https://gitter.im/angular-material-extensions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/anthonynahas/ngx-animated-gradient.svg?branch=master)](https://travis-ci.org/anthonynahas/ngx-animated-gradient)
 [![dependency Status](https://david-dm.org/anthonynahas/ngx-animated-gradient/status.svg)](https://david-dm.org/anthonynahas/ngx-animated-gradient)
 [![devDependency Status](https://david-dm.org/anthonynahas/ngx-animated-gradient/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-animated-gradient#info=devDependencies)
 [![Greenkeeper Badge](https://badges.greenkeeper.io/anthonynahas/ngx-animated-gradient.svg)](https://greenkeeper.io/)
-[![license](https://img.shields.io/github/license/anthonynahas/ngx-linkifyjs.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-linkifyjs/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/anthonynahas/ngx-animated-gradient.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-animated-gradient/blob/master/LICENSE)
 
 
 
