@@ -23,11 +23,11 @@ export class NgxAnimatedGradientDirective implements OnInit, OnDestroy {
   @Input()
   tickSpeed = 16;
 
-  // color table indices for:
-  // current color left
-  // next color left
-  // current color right
-  // next color right
+  /**
+   * The color indices, these indicate where in the color table to load from
+   * The order is as follows:
+   *   Current left, Next left, Current right, Next right
+   */
   @Input()
   colorIndices = [0, 1, 2, 3];
 
@@ -37,56 +37,75 @@ export class NgxAnimatedGradientDirective implements OnInit, OnDestroy {
   @Input()
   gradientSpeed = 0.002;
 
-  private step = 0;
+  private step$ = new BehaviorSubject<number>(0);
 
   private componentDestroyed$ = new Subject<boolean>();
 
-  private gradientStopped$ = new BehaviorSubject<boolean>(false);
-
-  private timer$ = combineLatest(timer(0, this.tickSpeed), this.gradientStopped$);
+  private gradientRunning$ = new BehaviorSubject<boolean>(true);
 
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   ngOnInit(): void {
-    this.timer$.pipe(takeUntil(this.componentDestroyed$)).subscribe(([time, gradientStopped]) => {
-      if (!gradientStopped) {
-        this.render();
-      }
-    });
+    /**
+     * Combine the timer and gradient running to trigger rendering
+     */
+    combineLatest(timer(0, this.tickSpeed), this.gradientRunning$)
+      .pipe(
+        takeUntil(this.componentDestroyed$),
+        tap(([_, gradientRunning]) => gradientRunning && this.render())
+      )
+      .subscribe();
+
+    /**
+     * Set up the change in pallate as a side effect of the step changing
+     */
+    this.step$
+      .pipe(
+        takeUntil(this.componentDestroyed$),
+        tap((step: number) => {
+          if (step >= 1) {
+            this.step$.next((step %= 1));
+            this.colorIndices[0] = this.colorIndices[1];
+            this.colorIndices[2] = this.colorIndices[3];
+            // pick two new target color indices
+            // do not pick the same as the current one
+            this.colorIndices[1] = this.getNewColour(1);
+            this.colorIndices[3] = this.getNewColour(3);
+          }
+        })
+      )
+      .subscribe();
   }
 
   ngOnDestroy() {
-    this.gradientStopped$.next(true);
+    this.gradientRunning$.next(false);
     this.componentDestroyed$.next(true);
 
-    this.gradientStopped$.complete();
+    this.gradientRunning$.complete();
     this.componentDestroyed$.complete();
   }
 
-  private createColor(index: number, step: number, value1: number, value2: number) {
-    return Math.round(index * value1 + step * value2);
+  private createColor(index: number, step: number, value1: RGBValue, value2: RGBValue) {
+    const red = Math.round(index * value1[0] + step * value2[0]);
+    const green = Math.round(index * value1[1] + step * value2[1]);
+    const blue = Math.round(index * value1[2] + step * value2[2]);
+    return `rgb(${red}, ${green}, ${blue})`;
   }
 
   private getNewColour(index: number) {
     return (this.colorIndices[index] + Math.floor(1 + Math.random() * (this.colors.length - 1))) % this.colors.length;
   }
 
-  private getColours() {
+  private generateColour() {
+    const step = this.step$.value;
     const c0_0: RGBValue = this.colors[this.colorIndices[0]];
     const c0_1: RGBValue = this.colors[this.colorIndices[1]];
     const c1_0: RGBValue = this.colors[this.colorIndices[2]];
     const c1_1: RGBValue = this.colors[this.colorIndices[3]];
 
-    const stepIndex = 1 - this.step;
-    const r1 = this.createColor(stepIndex, this.step, c0_0[0], c0_1[0]);
-    const g1 = this.createColor(stepIndex, this.step, c0_0[1], c0_1[1]);
-    const b1 = this.createColor(stepIndex, this.step, c0_0[2], c0_1[2]);
-    const color1 = `rgb(${r1}, ${g1}, ${b1})`;
-
-    const r2 = this.createColor(stepIndex, this.step, c1_0[0], c1_1[0]);
-    const g2 = this.createColor(stepIndex, this.step, c1_0[1], c1_1[1]);
-    const b2 = this.createColor(stepIndex, this.step, c1_0[2], c1_1[2]);
-    const color2 = `rgb(${r2}, ${g2}, ${b2})`;
+    const stepIndex = 1 - step;
+    const color1 = this.createColor(stepIndex, step, c0_0, c0_1);
+    const color2 = this.createColor(stepIndex, step, c1_0, c1_1);
 
     return [color1, color2];
   }
@@ -95,21 +114,21 @@ export class NgxAnimatedGradientDirective implements OnInit, OnDestroy {
    * Start the directive gradient animation
    */
   public start(): void {
-    this.gradientStopped$.next(false);
+    this.gradientRunning$.next(true);
   }
 
   /**
    * Stop the directive gradient animation
    */
   public stop(): void {
-    this.gradientStopped$.next(true);
+    this.gradientRunning$.next(false);
   }
 
   /**
    * Update the gradient animation
    */
   public render() {
-    const [color1, color2] = this.getColours();
+    const [color1, color2] = this.generateColour();
 
     this.renderer.setStyle(
       this.el.nativeElement,
@@ -123,16 +142,10 @@ export class NgxAnimatedGradientDirective implements OnInit, OnDestroy {
       `-moz-linear-gradient(left, ${color1} 0%, ${color2} 100%)`
     );
 
-    this.step += this.gradientSpeed;
-    if (this.step >= 1) {
-      this.step %= 1;
-      this.colorIndices[0] = this.colorIndices[1];
-      this.colorIndices[2] = this.colorIndices[3];
-
-      // pick two new target color indices
-      // do not pick the same as the current one
-      this.colorIndices[1] = this.getNewColour(1);
-      this.colorIndices[3] = this.getNewColour(3);
+    let result = this.step$.value + this.gradientSpeed;
+    if (Number.isNaN(result)) {
+      result = 0;
     }
+    this.step$.next(result);
   }
 }
