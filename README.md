@@ -5,11 +5,15 @@
 # ngx-animated-gradient - Angular Directivated that animated the gardient background
 
 [![npm version](https://badge.fury.io/js/ngx-animated-gradient.svg)](https://badge.fury.io/js/ngx-animated-gradient),
+[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://anthonynahas.github.io/ngx-linkifyjs)
+[![Join the chat at (https://gitter.im/angular-material-extensions/Lobby](https://badges.gitter.im/ngx-auth-firebaseui/Lobby.svg)](https://gitter.im/angular-material-extensions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/anthonynahas/ngx-animated-gradient.svg?branch=master)](https://travis-ci.org/anthonynahas/ngx-animated-gradient)
-[![Coverage Status](https://coveralls.io/repos/github/anthonynahas/ngx-animated-gradient/badge.svg?branch=master)](https://coveralls.io/github/anthonynahas/ngx-animated-gradient?branch=master)
 [![dependency Status](https://david-dm.org/anthonynahas/ngx-animated-gradient/status.svg)](https://david-dm.org/anthonynahas/ngx-animated-gradient)
 [![devDependency Status](https://david-dm.org/anthonynahas/ngx-animated-gradient/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-animated-gradient#info=devDependencies)
 [![Greenkeeper Badge](https://badges.greenkeeper.io/anthonynahas/ngx-animated-gradient.svg)](https://greenkeeper.io/)
+[![license](https://img.shields.io/github/license/anthonynahas/ngx-linkifyjs.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-linkifyjs/blob/master/LICENSE)
+
+
 
 ## Demo
 
@@ -19,7 +23,14 @@ View all the directives in action at https://anthonynahas.github.io/ngx-animated
 * [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 2.0.0)
 
 ## Installation
-Install above dependencies via *npm*. 
+
+## 1. Install via *ng add*. (Recommended)
+
+Now add the library via the `angular schematics`
+```shell
+ng add ngx-animated-gradient
+```
+## 2. Install via *npm*. (Alternative) 
 
 Now install `ngx-animated-gradient` via:
 ```shell
@@ -70,7 +81,38 @@ export class OtherModule {
 
 ## Usage
 
+```
 
+<a name="other-angular-libraries"/>
+
+## Other Angular Libraries
+- [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
+- [ngx-linkifyjs](https://github.com/anthonynahas/ngx-linkifyjs)
+- [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
+- [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
+- [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
+- [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
+- [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
+- [@angular-material-extensions/jumbotron](https://github.com/angular-material-extensions/jumbotron)
+- [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
+- [@angular-material-extensions/combination-generator](https://github.com/angular-material-extensions/combination-generator)
+
+---
+
+<a name="support"/>
+
+## Support
++ Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de)
++ or open an appropriate [issue](https://github.com/anthonynahas/ngx-auth-firebaseui/issues)
++ let us chat on [Gitter](https://gitter.im/ngx-auth-firebaseui/Lobby)
+ 
+ Built by and for developers :heart: we will help you :punch:
+
+---
+
+![jetbrains logo](assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
+
+This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL PRODUCTS PACK OS LICENSE incl. [webstorm](https://www.jetbrains.com/webstorm)
 
 ## License
 
