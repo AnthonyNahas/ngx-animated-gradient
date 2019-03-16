@@ -1,7 +1,7 @@
 {
   "name": "ngx-animated-gradient",
   "description": "Angular Directive that animated the gradient background",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "homepage": "https://github.com/AnthonyNahas/ngx-animated-gradient",
   "author": {
     "name": "Anthony Nahas",
