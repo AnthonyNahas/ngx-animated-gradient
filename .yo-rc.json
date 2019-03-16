@@ -1,0 +1,40 @@
+{
+  "generator-ngx-library": {
+    "version": "6.2.1",
+    "authorName": "Anthony Nahas",
+    "authorEmail": "anthony.na@hotmail.de",
+    "githubUsername": "anthonynahas",
+    "githubRepoName": "ngx-animated-gradient",
+    "projectName": "nx-animated-gradient",
+    "projectVersion": "0.0.1",
+    "projectDescription": "Angular Directivated that animated the gardient background",
+    "projectKeywords": [
+      "ngx",
+      "library",
+      "angular",
+      "animations",
+      "background",
+      "colors",
+      "gradient"
+    ],
+    "ngVersion": "6.0.0",
+    "ngModules": [
+      "core",
+      "common"
+    ],
+    "otherDependencies": [],
+    "additionalPackageFiles": [],
+    "dependenciesRange": "^",
+    "ngPrefix": "ngx",
+    "testingFramework": "jest",
+    "useGreenkeeper": true,
+    "useCompodoc": true,
+    "enforceNgGitCommitMsg": true,
+    "exclusions": [
+      "config/karma.conf.js",
+      "config/webpack.test.js",
+      "config/karma-test-shim.js"
+    ],
+    "deleteExclusions": []
+  }
+}
