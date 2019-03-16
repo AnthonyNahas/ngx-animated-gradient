@@ -1,6 +1,6 @@
 import { NxAnimatedGradientDemoPage } from './app.po';
 
-describe('nx-animated-gradient-demo App', () => {
+describe('ngx-animated-gradient-demo App', () => {
   let page: NxAnimatedGradientDemoPage;
 
   beforeEach(() => {

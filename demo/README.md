@@ -1,4 +1,4 @@
-# nx-animated-gradient-demo
+# ngx-animated-gradient-demo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 

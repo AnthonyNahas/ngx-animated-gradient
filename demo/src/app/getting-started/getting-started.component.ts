@@ -12,7 +12,7 @@ export class GettingStartedComponent implements OnInit {
   constructor(private titleService:Title) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Getting Started | nx-animated-gradient');
+    this.titleService.setTitle('Getting Started | ngx-animated-gradient');
   }
 
 }

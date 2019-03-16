@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 
 import { HomeComponent } from './home.component';
-import {  LibModule  } from 'nx-animated-gradient';
+import {  NgxAnimatedGradientModule  } from 'ngx-animated-gradient';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -11,7 +11,7 @@ describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        LibModule.forRoot(),],
+        NgxAnimatedGradientModule.forRoot(),],
       declarations: [HomeComponent]
     })
       .compileComponents()

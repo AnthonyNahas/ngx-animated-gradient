@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private titleService:Title) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Home | nx-animated-gradient');
+    this.titleService.setTitle('Home | ngx-animated-gradient');
   }
 
   editOnStackBlitz() {
