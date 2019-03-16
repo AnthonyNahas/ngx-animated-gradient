@@ -12,6 +12,7 @@
     "url": "git://github.com/anthonynahas/ngx-animated-gradient.git"
   },
   "license": "MIT",
+  "schematics": "./schematics/collection.json",
   "keywords": [
     "ngx",
     "library",
@@ -32,10 +33,11 @@
     "check-travis": " travis-status --repo=anthonynahas/ngx-animated-gradient --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
-    "@angular/core": "^7.2.9",
-    "@angular/common": "^7.2.9"
+    "@angular/common": "^7.2.9",
+    "@angular/core": "^7.2.9"
   },
   "devDependencies": {
+    "@angular-devkit/schematics": "^7.3.6",
     "@angular/animations": "^7.2.9",
     "@angular/compiler": "^7.2.9",
     "@angular/compiler-cli": "^7.2.9",
@@ -87,6 +89,7 @@
     "run-sequence": "^2.2.1",
     "rxjs": "^6.4.0",
     "sass-loader": "^7.1.0",
+    "schematics-utilities": "^1.1.2",
     "source-map-loader": "^0.2.4",
     "to-string-loader": "^1.1.5",
     "travis-status": "^3.0.1",
