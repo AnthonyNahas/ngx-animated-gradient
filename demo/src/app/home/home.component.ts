@@ -27,6 +27,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.directive.stop();
   }
 
+  public newPalette() {
+    this.directive.newPalette();
+  }
+
   editOnStackBlitz() {
     sdk.openGithubProject('AnthonyNahas/ngx-animated-gradient/tree/master/demo');
   }
