@@ -16,6 +16,6 @@ export class HomeComponent implements OnInit {
   }
 
   editOnStackBlitz() {
-    sdk.openGithubProject('anthonynahas/ngx-animated-gradient/tree/master/demo');
+    sdk.openGithubProject('AnthonyNahas/ngx-animated-gradient/tree/master/demo');
   }
 }

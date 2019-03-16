@@ -2,14 +2,14 @@
   "name": "ngx-animated-gradient",
   "description": "Angular Directive that animated the gradient background",
   "version": "0.0.1",
-  "homepage": "https://github.com/anthonynahas/ngx-animated-gradient",
+  "homepage": "https://github.com/AnthonyNahas/ngx-animated-gradient",
   "author": {
     "name": "Anthony Nahas",
-    "url": "https://github.com/anthonynahas"
+    "url": "https://github.com/AnthonyNahas"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/anthonynahas/ngx-animated-gradient.git"
+    "url": "git://github.com/AnthonyNahas/ngx-animated-gradient.git"
   },
   "license": "MIT",
   "schematics": "./schematics/collection.json",
@@ -23,14 +23,14 @@
     "gradient"
   ],
   "bugs": {
-    "url": "https://github.com/anthonynahas/ngx-animated-gradient/issues"
+    "url": "https://github.com/AnthonyNahas/ngx-animated-gradient/issues"
   },
   "private": true,
   "scripts": {
     "start": "gulp build",
     "test": " gulp test",
     "demo": " gulp build:demo",
-    "check-travis": " travis-status --repo=anthonynahas/ngx-animated-gradient --branch=master --fail-pending || echo 'Not yet passing'"
+    "check-travis": " travis-status --repo=AnthonyNahas/ngx-animated-gradient --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
     "@angular/common": "^7.2.9",

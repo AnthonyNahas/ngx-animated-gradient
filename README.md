@@ -1,23 +1,23 @@
 <p align="center">
-  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-animated-gradient@master/demo/src/assets/logo.svg">
+  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/demo/src/assets/logo.svg">
 </p>
 
 # ngx-animated-gradient - Angular Directivated that animated the gardient background
 
 [![npm version](https://badge.fury.io/js/ngx-animated-gradient.svg)](https://badge.fury.io/js/ngx-animated-gradient),
-[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://anthonynahas.github.io/ngx-animated-gradient)
+[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://AnthonyNahas.github.io/ngx-animated-gradient)
 [![Join the chat at (https://gitter.im/angular-material-extensions/Lobby](https://badges.gitter.im/ngx-auth-firebaseui/Lobby.svg)](https://gitter.im/angular-material-extensions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/anthonynahas/ngx-animated-gradient.svg?branch=master)](https://travis-ci.org/anthonynahas/ngx-animated-gradient)
-[![dependency Status](https://david-dm.org/anthonynahas/ngx-animated-gradient/status.svg)](https://david-dm.org/anthonynahas/ngx-animated-gradient)
-[![devDependency Status](https://david-dm.org/anthonynahas/ngx-animated-gradient/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-animated-gradient#info=devDependencies)
-[![Greenkeeper Badge](https://badges.greenkeeper.io/anthonynahas/ngx-animated-gradient.svg)](https://greenkeeper.io/)
-[![license](https://img.shields.io/github/license/anthonynahas/ngx-animated-gradient.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-animated-gradient/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/AnthonyNahas/ngx-animated-gradient.svg?branch=master)](https://travis-ci.org/AnthonyNahas/ngx-animated-gradient)
+[![dependency Status](https://david-dm.org/AnthonyNahas/ngx-animated-gradient/status.svg)](https://david-dm.org/AnthonyNahas/ngx-animated-gradient)
+[![devDependency Status](https://david-dm.org/AnthonyNahas/ngx-animated-gradient/dev-status.svg?branch=master)](https://david-dm.org/AnthonyNahas/ngx-animated-gradient#info=devDependencies)
+[![Greenkeeper Badge](https://badges.greenkeeper.io/AnthonyNahas/ngx-animated-gradient.svg)](https://greenkeeper.io/)
+[![license](https://img.shields.io/github/license/AnthonyNahas/ngx-animated-gradient.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-animated-gradient/blob/master/LICENSE)
 
 
 
 ## Demo
 
-View all the directives in action at https://anthonynahas.github.io/ngx-animated-gradient
+View all the directives in action at https://AnthonyNahas.github.io/ngx-animated-gradient
 
 ## Dependencies
 * [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 2.0.0)
@@ -104,9 +104,9 @@ another full example
 <a name="other-angular-libraries"/>
 
 ## Other Angular Libraries
-- [ngx-auth-firebaseui](https://github.com/anthonynahas/ngx-auth-firebaseui)
+- [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 - [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
-- [ngx-linkifyjs](https://github.com/anthonynahas/ngx-linkifyjs)
+- [ngx-linkifyjs](https://github.com/AnthonyNahas/ngx-linkifyjs)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
 - [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
@@ -122,7 +122,7 @@ another full example
 
 ## Support
 + Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de)
-+ or open an appropriate [issue](https://github.com/anthonynahas/ngx-auth-firebaseui/issues)
++ or open an appropriate [issue](https://github.com/AnthonyNahas/ngx-auth-firebaseui/issues)
 + let us chat on [Gitter](https://gitter.im/ngx-auth-firebaseui/Lobby)
  
  Built by and for developers :heart: we will help you :punch:
