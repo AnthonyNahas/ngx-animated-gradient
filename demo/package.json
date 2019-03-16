@@ -10,7 +10,8 @@
     "test": "jest",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "npm link ngx-animated-gradient"
+    "link": "npm link ngx-animated-gradient",
+    "postinstall": "npm run link"
   },
   "private": true,
   "dependencies": {

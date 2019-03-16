@@ -24,7 +24,7 @@ function loadPackageVersionGracefully(context: SchematicContext): string | null 
 // per file.
 export function addPackageJsonDependencies(): Rule {
   return (host: Tree, context: SchematicContext) => {
-    
+
     const dependencies: NodeDependency[] = [
       {
         type: NodeDependencyType.Default,
