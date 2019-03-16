@@ -1,5 +1,5 @@
 import { Directive, ElementRef, OnInit, OnDestroy, Renderer2, Input } from '@angular/core';
-import { timer, Subject, BehaviorSubject, Observable, combineLatest } from 'rxjs';
+import { timer, Subject, BehaviorSubject, combineLatest } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 
 /**
