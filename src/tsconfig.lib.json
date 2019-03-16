@@ -14,8 +14,8 @@
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "genDir": "../tmp/lib-gen-dir/",
-    "flatModuleOutFile": "nx-animated-gradient.js",
-    "flatModuleId": "nx-animated-gradient",
+    "flatModuleOutFile": "ngx-animated-gradient.js",
+    "flatModuleId": "ngx-animated-gradient",
     "annotateForClosureCompiler": true
   }
 }

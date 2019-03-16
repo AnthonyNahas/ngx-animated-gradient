@@ -1,1 +1,1 @@
-export * from './module/lib.module';
+export * from './module/ngx-animated-gradient.module';
