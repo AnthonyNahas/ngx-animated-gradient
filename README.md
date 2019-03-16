@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/anthonynahas/ngx-animated-gradient/master/demo/src/assets/logo.svg">
+  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-animated-gradient@master/demo/src/assets/logo.svg">
 </p>
 
 # ngx-animated-gradient - Angular Directivated that animated the gardient background
