@@ -1,6 +1,6 @@
 import { Directive, ElementRef, OnInit, OnDestroy, Renderer2, Input } from '@angular/core';
-import { timer, Subject, BehaviorSubject, Observable } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { timer, Subject, BehaviorSubject, Observable, combineLatest } from 'rxjs';
+import { takeUntil, tap } from 'rxjs/operators';
 
 /**
  * A `RGBValue` containers the RGB values for a step in the gradient animation
@@ -16,12 +16,6 @@ export class NgxAnimatedGradientDirective implements OnInit, OnDestroy {
    */
   @Input()
   colors: RGBValue[] = [[62, 35, 255], [60, 255, 60], [255, 35, 98], [45, 175, 230], [255, 0, 255], [255, 128, 0]];
-
-  /**
-   * The step value used in the animation
-   */
-  @Input()
-  step = 0;
 
   /**
    * The tick speed for calling the update of the gradient
@@ -41,27 +35,40 @@ export class NgxAnimatedGradientDirective implements OnInit, OnDestroy {
    * The multiplier for the gradient speed
    */
   @Input()
-  gradientSpeed = 1;
+  gradientSpeed = 0.002;
+
+  private step = 0;
+
+  private componentDestroyed$ = new Subject<boolean>();
 
   private gradientStopped$ = new BehaviorSubject<boolean>(false);
 
-  private gradientTimer = timer(this.tickSpeed)
-      .pipe(takeUntil(this.gradientStopped$))
-      .subscribe(() => this.updateGradient());
+  private timer$ = combineLatest(timer(0, this.tickSpeed), this.gradientStopped$);
 
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   ngOnInit(): void {
-    this.gradientStopped$.next(false);
+    this.timer$.pipe(takeUntil(this.componentDestroyed$)).subscribe(([time, gradientStopped]) => {
+      if (!gradientStopped) {
+        this.render();
+      }
+    });
   }
 
   ngOnDestroy() {
     this.gradientStopped$.next(true);
+    this.componentDestroyed$.next(true);
+
     this.gradientStopped$.complete();
+    this.componentDestroyed$.complete();
   }
 
   private createColor(index: number, step: number, value1: number, value2: number) {
     return Math.round(index * value1 + step * value2);
+  }
+
+  private getNewColour(index: number) {
+    return (this.colorIndices[index] + Math.floor(1 + Math.random() * (this.colors.length - 1))) % this.colors.length;
   }
 
   private getColours() {
@@ -84,15 +91,24 @@ export class NgxAnimatedGradientDirective implements OnInit, OnDestroy {
     return [color1, color2];
   }
 
-  public stop(): void {
-    this.gradientStopped$.next(true);
-  }
-
+  /**
+   * Start the directive gradient animation
+   */
   public start(): void {
     this.gradientStopped$.next(false);
   }
 
-  public updateGradient() {
+  /**
+   * Stop the directive gradient animation
+   */
+  public stop(): void {
+    this.gradientStopped$.next(true);
+  }
+
+  /**
+   * Update the gradient animation
+   */
+  public render() {
     const [color1, color2] = this.getColours();
 
     this.renderer.setStyle(
@@ -115,10 +131,8 @@ export class NgxAnimatedGradientDirective implements OnInit, OnDestroy {
 
       // pick two new target color indices
       // do not pick the same as the current one
-      this.colorIndices[1] =
-        (this.colorIndices[1] + Math.floor(1 + Math.random() * (this.colors.length - 1))) % this.colors.length;
-      this.colorIndices[3] =
-        (this.colorIndices[3] + Math.floor(1 + Math.random() * (this.colors.length - 1))) % this.colors.length;
+      this.colorIndices[1] = this.getNewColour(1);
+      this.colorIndices[3] = this.getNewColour(3);
     }
   }
 }
