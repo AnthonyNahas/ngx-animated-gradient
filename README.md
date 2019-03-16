@@ -86,6 +86,7 @@ export class OtherModule {
 <a name="other-angular-libraries"/>
 
 ## Other Angular Libraries
+- [ngx-auth-firebaseui](https://github.com/anthonynahas/ngx-auth-firebaseui)
 - [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 - [ngx-linkifyjs](https://github.com/anthonynahas/ngx-linkifyjs)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
