@@ -64,6 +64,7 @@
             </p>
             <p class="comment">
                             <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                            <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
             </p>
 
 
@@ -94,16 +95,20 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#colorIndices">colorIndices</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#componentDestroyed$">componentDestroyed$</a>
                             </li>
                             <li>
-                                <a href="#colors">colors</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#direction">direction</a>
                             </li>
                             <li>
-                                <a href="#gradientSpeed">gradientSpeed</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#gradientRunning$">gradientRunning$</a>
                             </li>
                             <li>
-                                <a href="#step">step</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#step$">step$</a>
                             </li>
                         </ul>
                     </td>
@@ -118,15 +123,66 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#createColor">createColor</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#generateColour">generateColour</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getNewColour">getNewColour</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#newPalette">newPalette</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
-                                <a href="#updateGradient">updateGradient</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#render">render</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#start">start</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#stop">stop</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#colorIndices">colorIndices</a>
+                            </li>
+                            <li>
+                                <a href="#colors">colors</a>
+                            </li>
+                            <li>
+                                <a href="#gradientSpeed">gradientSpeed</a>
+                            </li>
+                            <li>
+                                <a href="#tickSpeed">tickSpeed</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -146,7 +202,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:53</a></div>
                             </td>
                         </tr>
 
@@ -196,7 +252,121 @@
         </table>
 </section>
 
+            <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="colorIndices"></a>
+                        <b>colorIndices</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[0, 1, 2, 3]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:39</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The color indices, these indicate where in the color table to load from
+The order is as follows:
+   Current left, Next left, Current right, Next right</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="colors"></a>
+                        <b>colors</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#RGBValue" target="_self" >RGBValue[]</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[[62, 35, 255], [60, 255, 60], [255, 35, 98], [45, 175, 230], [255, 0, 255], [255, 128, 0]]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:25</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A list of RGB Value tuples used to define the gradient</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="gradientSpeed"></a>
+                        <b>gradientSpeed</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0.002</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:45</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The multiplier for the gradient speed</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tickSpeed"></a>
+                        <b>tickSpeed</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>16</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:31</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The tick speed for calling the update of the gradient</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -205,6 +375,340 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createColor"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            createColor
+                        </b>
+                        <a href="#createColor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createColor(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, step: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, value1: <a href="../undefineds/RGBValue.html">RGBValue</a>, value2: <a href="../undefineds/RGBValue.html">RGBValue</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>step</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>value1</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#RGBValue" target="_self" >RGBValue</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>value2</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#RGBValue" target="_self" >RGBValue</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateColour"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            generateColour
+                        </b>
+                        <a href="#generateColour"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateColour(step: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:105</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>step</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#RGBTransition" target="_self" >RGBTransition</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNewColour"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getNewColour
+                        </b>
+                        <a href="#getNewColour"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getNewColour(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newPalette"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            newPalette
+                        </b>
+                        <a href="#newPalette"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>newPalette()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="140"
+                            class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:140</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set a new palette for the animation</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -227,8 +731,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:57</a></div>
                 </td>
             </tr>
 
@@ -248,32 +752,165 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="updateGradient"></a>
+                    <a name="render"></a>
                     <span class="name">
                         <b>
-                            updateGradient
+                            <span class="modifier">Public</span>
+                            render
                         </b>
-                        <a href="#updateGradient"><span class="icon ion-ios-link"></span></a>
+                        <a href="#render"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>updateGradient()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>render(renderValue: <a href="../undefineds/RGBTransition.html">RGBTransition</a>, step: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="152"
+                            class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:152</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Update the gradient animation</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>renderValue</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#RGBTransition" target="_self" >RGBTransition</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>step</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="start"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            start
+                        </b>
+                        <a href="#start"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>start()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:126</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Start the directive gradient animation</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stop"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            stop
+                        </b>
+                        <a href="#stop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>stop()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Stop the directive gradient animation</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -293,28 +930,23 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="colorIndices"></a>
+                        <a name="componentDestroyed$"></a>
                         <span class="name">
                             <b>
-                            colorIndices</b>
-                            <a href="#colorIndices"><span class="icon ion-ios-link"></span></a>
+                                <span class="modifier">Private</span>
+                            componentDestroyed$</b>
+                            <a href="#componentDestroyed$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code>[]</code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>[0, 1, 2, 3]</code>
+                            <i>Default value : </i><code>new Subject&lt;boolean&gt;()</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:51</a></div>
                             </td>
                         </tr>
 
@@ -325,33 +957,23 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="colors"></a>
+                        <a name="direction"></a>
                         <span class="name">
                             <b>
-                            colors</b>
-                            <a href="#colors"><span class="icon ion-ios-link"></span></a>
+                                <span class="modifier">Private</span>
+                            direction</b>
+                            <a href="#direction"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code>[]</code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>[[62, 35, 255],
-    [60, 255, 60],
-    [255, 35, 98],
-    [45, 175, 230],
-    [255, 0, 255],
-    [255, 128, 0]]</code>
+                            <i>Default value : </i><code>InterpolationDirection.FORWARD</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:8</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:47</a></div>
                             </td>
                         </tr>
 
@@ -362,28 +984,23 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="gradientSpeed"></a>
+                        <a name="gradientRunning$"></a>
                         <span class="name">
                             <b>
-                            gradientSpeed</b>
-                            <a href="#gradientSpeed"><span class="icon ion-ios-link"></span></a>
+                                <span class="modifier">Private</span>
+                            gradientRunning$</b>
+                            <a href="#gradientRunning$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>0.002</code>
+                            <i>Default value : </i><code>new BehaviorSubject&lt;boolean&gt;(true)</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:53</a></div>
                             </td>
                         </tr>
 
@@ -394,28 +1011,23 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="step"></a>
+                        <a name="step$"></a>
                         <span class="name">
                             <b>
-                            step</b>
-                            <a href="#step"><span class="icon ion-ios-link"></span></a>
+                                <span class="modifier">Private</span>
+                            step$</b>
+                            <a href="#step$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>0</code>
+                            <i>Default value : </i><code>new BehaviorSubject&lt;number&gt;(0)</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/module/ngx-animated-gradient.directive.ts:49</a></div>
                             </td>
                         </tr>
 
@@ -429,94 +1041,170 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directive, ElementRef, OnInit, Renderer2 } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directive, ElementRef, OnInit, OnDestroy, Renderer2, Input } from &#x27;@angular/core&#x27;;
+import { timer, Subject, BehaviorSubject, combineLatest } from &#x27;rxjs&#x27;;
+import { takeUntil, tap } from &#x27;rxjs/operators&#x27;;
+
+/**
+ * A &#x60;RGBValue&#x60; containers the RGB values for a step in the gradient animation
+ */
+export type RGBValue &#x3D; [number, number, number];
+
+export type RGBTransition &#x3D; [string, string];
+
+export enum InterpolationDirection {
+  FORWARD,
+  BACKWARD
+}
 
 @Directive({
   selector: &#x27;[ngxAnimatedGradient]&#x27;
 })
-export class NgxAnimatedGradientDirective implements OnInit {
+export class NgxAnimatedGradientDirective implements OnInit, OnDestroy {
+  /**
+   * A list of RGB Value tuples used to define the gradient
+   */
+  @Input()
+  colors: RGBValue[] &#x3D; [[62, 35, 255], [60, 255, 60], [255, 35, 98], [45, 175, 230], [255, 0, 255], [255, 128, 0]];
 
-  colors &#x3D; [[62, 35, 255],
-    [60, 255, 60],
-    [255, 35, 98],
-    [45, 175, 230],
-    [255, 0, 255],
-    [255, 128, 0]];
+  /**
+   * The tick speed for calling the update of the gradient
+   */
+  @Input()
+  tickSpeed &#x3D; 16;
 
-  step &#x3D; 0;
-
-  // color table indices for:
-  // current color left
-  // next color left
-  // current color right
-  // next color right
+  /**
+   * The color indices, these indicate where in the color table to load from
+   * The order is as follows:
+   *   Current left, Next left, Current right, Next right
+   */
+  @Input()
   colorIndices &#x3D; [0, 1, 2, 3];
 
-  // transition speed
+  /**
+   * The multiplier for the gradient speed
+   */
+  @Input()
   gradientSpeed &#x3D; 0.002;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {
-  }
+  private direction &#x3D; InterpolationDirection.FORWARD;
+
+  private step$ &#x3D; new BehaviorSubject&lt;number&gt;(0);
+
+  private componentDestroyed$ &#x3D; new Subject&lt;boolean&gt;();
+
+  private gradientRunning$ &#x3D; new BehaviorSubject&lt;boolean&gt;(true);
+
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   ngOnInit(): void {
-    console.log(&#x27;NgxAnimatedGradientDirective init&#x27;);
-    setInterval(() &#x3D;&gt; {
-      this.updateGradient();
-    }, 10);
+    combineLatest(timer(0, this.tickSpeed), this.gradientRunning$)
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe(([_, gradientRunning]) &#x3D;&gt; {
+        if (gradientRunning) {
+          let result &#x3D;
+            this.direction &#x3D;&#x3D;&#x3D; InterpolationDirection.FORWARD
+              ? this.step$.value + this.gradientSpeed
+              : this.step$.value - this.gradientSpeed;
 
+          if (result &gt;&#x3D; 1) {
+            this.direction &#x3D; InterpolationDirection.BACKWARD;
+            result &#x3D; 1;
+          } else if (result &lt;&#x3D; 0) {
+            this.direction &#x3D; InterpolationDirection.FORWARD;
+            result &#x3D; 0;
+          }
+          this.step$.next(result);
+        }
+      });
+
+    /**
+     * Combine the timer and gradient running to trigger rendering
+     */
+    combineLatest(this.step$, this.gradientRunning$)
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe(([step, gradientRunning]) &#x3D;&gt; gradientRunning &amp;&amp; this.render(this.generateColour(step), step));
   }
 
-  updateGradient() {
+  ngOnDestroy() {
+    this.gradientRunning$.next(false);
+    this.componentDestroyed$.next(true);
 
-    const c0_0 &#x3D; this.colors[this.colorIndices[0]];
-    const c0_1 &#x3D; this.colors[this.colorIndices[1]];
-    const c1_0 &#x3D; this.colors[this.colorIndices[2]];
-    const c1_1 &#x3D; this.colors[this.colorIndices[3]];
+    this.gradientRunning$.complete();
+    this.componentDestroyed$.complete();
+  }
 
-    const istep &#x3D; 1 - this.step;
-    const r1 &#x3D; Math.round(istep * c0_0[0] + this.step * c0_1[0]);
-    const g1 &#x3D; Math.round(istep * c0_0[1] + this.step * c0_1[1]);
-    const b1 &#x3D; Math.round(istep * c0_0[2] + this.step * c0_1[2]);
-    const color1 &#x3D; &#x27;rgb(&#x27; + r1 + &#x27;,&#x27; + g1 + &#x27;,&#x27; + b1 + &#x27;)&#x27;;
+  private createColor(index: number, step: number, value1: RGBValue, value2: RGBValue) {
+    const red &#x3D; Math.round(index * value1[0] + step * value2[0]);
+    const green &#x3D; Math.round(index * value1[1] + step * value2[1]);
+    const blue &#x3D; Math.round(index * value1[2] + step * value2[2]);
+    return &#x60;rgb(${red}, ${green}, ${blue})&#x60;;
+  }
 
-    const r2 &#x3D; Math.round(istep * c1_0[0] + this.step * c1_1[0]);
-    const g2 &#x3D; Math.round(istep * c1_0[1] + this.step * c1_1[1]);
-    const b2 &#x3D; Math.round(istep * c1_0[2] + this.step * c1_1[2]);
-    const color2 &#x3D; &#x27;rgb(&#x27; + r2 + &#x27;,&#x27; + g2 + &#x27;,&#x27; + b2 + &#x27;)&#x27;;
+  private getNewColour(index: number) {
+    return (this.colorIndices[index] + Math.floor(1 + Math.random() * (this.colors.length - 1))) % this.colors.length;
+  }
 
+  private generateColour(step: number): RGBTransition {
+    const stepIndex &#x3D; 1 - step;
+    const color1 &#x3D; this.createColor(
+      stepIndex,
+      step,
+      this.colors[this.colorIndices[0]],
+      this.colors[this.colorIndices[1]]
+    );
+    const color2 &#x3D; this.createColor(
+      stepIndex,
+      step,
+      this.colors[this.colorIndices[2]],
+      this.colors[this.colorIndices[3]]
+    );
+
+    return [color1, color2];
+  }
+
+  /**
+   * Start the directive gradient animation
+   */
+  public start(): void {
+    this.gradientRunning$.next(true);
+  }
+
+  /**
+   * Stop the directive gradient animation
+   */
+  public stop(): void {
+    this.gradientRunning$.next(false);
+  }
+
+  /**
+   * Set a new palette for the animation
+   */
+  public newPalette(): void {
+    this.colorIndices[0] &#x3D; this.colorIndices[1];
+    this.colorIndices[2] &#x3D; this.colorIndices[3];
+    // pick two new target color indices
+    // do not pick the same as the current one
+    this.colorIndices[1] &#x3D; this.getNewColour(1);
+    this.colorIndices[3] &#x3D; this.getNewColour(3);
+  }
+
+  /**
+   * Update the gradient animation
+   */
+  public render(renderValue: RGBTransition, step: number) {
     this.renderer.setStyle(
       this.el.nativeElement,
       &#x27;background&#x27;,
-      &#x27;-webkit-gradient(linear, left top, right top, from(&#x27; + color1 + &#x27;), to(&#x27; + color2 + &#x27;))&#x27;
+      &#x60;-webkit-gradient(linear, left top, right top, from(${renderValue[0]}), to(${renderValue[1]}))&#x60;
     );
 
     this.renderer.setStyle(
       this.el.nativeElement,
       &#x27;background&#x27;,
-      &#x27;-moz-linear-gradient(left, &#x27; + color1 + &#x27; 0%, &#x27; + color2 + &#x27; 100%)&#x27;
+      &#x60;-moz-linear-gradient(left, ${renderValue[0]} 0%, ${renderValue[1]} 100%)&#x60;
     );
-    // $(&#x27;#gradient&#x27;).css({
-    //   background: &#x60;-webkit-gradient(linear, left top, right top, from(&#x27; + ${color1} + &#x27;), to(&#x27; + ${color2}  + &#x27;))&#x60;
-    // }).css({
-    //   background: &#x60;-moz-linear-gradient(left, ${color1}  0%, ${color2}   100%)&#x60;
-    // });
-
-    this.step +&#x3D; this.gradientSpeed;
-    if (this.step &gt;&#x3D; 1) {
-      this.step %&#x3D; 1;
-      this.colorIndices[0] &#x3D; this.colorIndices[1];
-      this.colorIndices[2] &#x3D; this.colorIndices[3];
-
-      // pick two new target color indices
-      // do not pick the same as the current one
-      this.colorIndices[1] &#x3D; (this.colorIndices[1]
-        + Math.floor(1 + Math.random() * (this.colors.length - 1))) % this.colors.length;
-      this.colorIndices[3] &#x3D; (this.colorIndices[3]
-        + Math.floor(1 + Math.random() * (this.colors.length - 1))) % this.colors.length;
-
-    }
   }
-
 }
 </code></pre>
     </div>
