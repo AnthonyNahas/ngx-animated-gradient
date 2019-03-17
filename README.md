@@ -1,5 +1,6 @@
 <p align="center">
-  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/demo/src/assets/logo.svg">
+  <img height="256px" width="256px" style="text-align: center;" 
+  src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/demo/src/assets/logo.svg">
 </p>
 
 # ngx-animated-gradient - Angular Directivated that animated the gardient background
@@ -13,7 +14,10 @@
 [![Greenkeeper Badge](https://badges.greenkeeper.io/AnthonyNahas/ngx-animated-gradient.svg)](https://greenkeeper.io/)
 [![license](https://img.shields.io/github/license/AnthonyNahas/ngx-animated-gradient.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-animated-gradient/blob/master/LICENSE)
 
-
+<p align="center">
+  <img alt="ngx-animated-gradien demonstration" style="text-align: center;"
+   src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/assets/ngx-animated-gradient.gif">
+</p>
 
 ## Demo
 
@@ -98,6 +102,17 @@ another full example
     </div>
 ```
 
+| option | bind  |  type  |   default    | description  |
+|:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
+| colors       | Input()  | RGBValue    | (see the code ;)) |  colors to render
+| tickSpeed   | Input()  | number| 16 |  The tick speed for calling the update of the gradient
+| colorIndices   | Input()  | number[] | [0, 1, 2, 3] | The color indices, these indicate where in the color table to load from
+| gradientSpeed   | Input()  | number | 0.002 | The multiplier for the gradient speed
+
+
+## Contributors
+
+- @tanepiper  
 
 ## Credit
 
