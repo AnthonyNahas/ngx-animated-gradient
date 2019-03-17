@@ -1,5 +1,17 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/AnthonyNahas/ngx-animated-gradient/compare/v1.0.0...v1.1.0) (2019-03-17)
+
+
+### Bug Fixes
+
+* **demo:** minor changes ([cba7232](https://github.com/AnthonyNahas/ngx-animated-gradient/commit/cba7232))
+* **package:** bump the version for the schematics ([5de6afb](https://github.com/AnthonyNahas/ngx-animated-gradient/commit/5de6afb))
+* **package:** downgraded conventional-github-releaser to v2 ([02339ca](https://github.com/AnthonyNahas/ngx-animated-gradient/commit/02339ca))
+
+
+
 <a name="1.0.0"></a>
-# 1.0.0 (2019-03-16)
+# [1.0.0](https://github.com/AnthonyNahas/ngx-animated-gradient/compare/797723e...v1.0.0) (2019-03-16)
 
 
 ### Bug Fixes

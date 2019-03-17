@@ -125,7 +125,7 @@ const readyToRelease = () => {
   fancyLog(`[bump-version]   Option '--version' provided, with value : 'major', 'minor' or 'patch'.................${isOK(canBump)}`);
   fancyLog(`[github-release] Option '--ghToken' provided or 'CONVENTIONAL_GITHUB_RELEASER_TOKEN' variable set......${isOK(canGhRelease)}`);
 
-  return isTravisPassing && onMasterBranch && canBump && canGhRelease && canNpmPublish;
+  return  onMasterBranch && canBump && canGhRelease && canNpmPublish;
 };
 
 const execCmd = (name, args, opts, ...subFolders) => {
