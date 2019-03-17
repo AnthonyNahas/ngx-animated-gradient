@@ -19,6 +19,25 @@
    src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/assets/ngx-animated-gradient.gif">
 </p>
 
+<p align="center">
+  <img alt="ngx-animated-gradien demonstration" style="text-align: center;"
+   src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/assets/1.png">
+</p>
+
+<p align="center">
+  <img alt="ngx-animated-gradien demonstration" style="text-align: center;"
+   src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/assets/2.png">
+</p>
+
+<p align="center">
+  <img alt="ngx-animated-gradien demonstration" style="text-align: center;"
+   src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/assets/3.png">
+</p>
+
+<p align="center">
+  <img alt="ngx-animated-gradien demonstration" style="text-align: center;"
+   src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/assets/4.png">
+</p>
 ## Demo
 
 View all the directives in action at https://AnthonyNahas.github.io/ngx-animated-gradient
