@@ -28,7 +28,7 @@ export function addPackageJsonDependencies(): Rule {
     const dependencies: NodeDependency[] = [
       {
         type: NodeDependencyType.Default,
-        version: loadPackageVersionGracefully(context) || '1.0.0',
+        version: loadPackageVersionGracefully(context) || '1.1.0',
         name: 'ngx-animated-gradient'
       },
     ];
