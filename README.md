@@ -15,27 +15,27 @@
 [![license](https://img.shields.io/github/license/AnthonyNahas/ngx-animated-gradient.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-animated-gradient/blob/master/LICENSE)
 
 <p align="center">
-  <img alt="ngx-animated-gradien demonstration" style="text-align: center;"
+  <img alt="ngx-animated-gradien demonstration" style="text-align: center; height: 400px"
    src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/assets/ngx-animated-gradient.gif">
 </p>
 
 <p align="center">
-  <img alt="ngx-animated-gradien demonstration" style="text-align: center;"
+  <img alt="ngx-animated-gradien demonstration" style="text-align: center; height: 400px"
    src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/assets/1.png">
 </p>
 
 <p align="center">
-  <img alt="ngx-animated-gradien demonstration" style="text-align: center;"
+  <img alt="ngx-animated-gradien demonstration" style="text-align: center; height: 400px"
    src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/assets/2.png">
 </p>
 
 <p align="center">
-  <img alt="ngx-animated-gradien demonstration" style="text-align: center;"
+  <img alt="ngx-animated-gradien demonstration" style="text-align: center; height: 400px"
    src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/assets/3.png">
 </p>
 
 <p align="center">
-  <img alt="ngx-animated-gradien demonstration" style="text-align: center;"
+  <img alt="ngx-animated-gradien demonstration" style="text-align: center; height: 400px"
    src="https://cdn.jsdelivr.net/gh/AnthonyNahas/ngx-animated-gradient@master/assets/4.png">
 </p>
 ## Demo
