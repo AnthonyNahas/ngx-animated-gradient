@@ -9,6 +9,6 @@ another full example
   <div class="card-header">
     ngx-animated-gradient
   </div>
-  <div class="card-body" ngxAnimatedGradient style="height: 400px" [gradientSpeed]="0.002" [tickSpeed]="16"></div>
+  <div class="card-body" ngxAnimatedGradient [gradientSpeed]="0.002" [tickSpeed]="16" style="height: 400px"></div>
 </div>
 ```
