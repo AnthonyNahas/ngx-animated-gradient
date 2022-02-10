@@ -78,7 +78,7 @@
     "jest-cli": "^24.5.0",
     "jest-preset-angular": "^7.0.1",
     "lodash": "^4.17.11",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "postcss": "^7.0.14",
     "postcss-strip-inline-comments": "^0.1.5",
     "pump": "^3.0.0",
